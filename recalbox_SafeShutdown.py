@@ -27,7 +27,7 @@ class myThread (threading.Thread):
         self.counter = counter
     def run(self):
         while 1:
-
+             time.sleep(3)
             file = open("/sys/class/thermal/thermal_zone0/temp")
             temp = float(file.read()) / 1000
             file.close()
@@ -44,10 +44,6 @@ class myThread (threading.Thread):
 
 thread1 = myThread(1, "Thread-1", 1)
 thread1.start()
-
-thread1 = myThread(1, "Thread-1", 1)
-
-
 
 
 while True:
