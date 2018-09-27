@@ -76,6 +76,7 @@ while True:
         time.sleep(0.5)
         if GPIO.event_detected(powerPin):
             print ("The system will be shut down soon!")
+             time.sleep(1)
             os.system("shutdown -h now")
 
         if GPIO.event_detected(resetPin):
